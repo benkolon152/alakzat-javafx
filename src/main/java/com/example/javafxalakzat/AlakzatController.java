@@ -1,5 +1,6 @@
 package com.example.javafxalakzat;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -91,6 +92,21 @@ public class AlakzatController {
 
         //listviewLines.add("Piros, kör");
         list_view_rand.setItems(listviewLines);
+        list_view_rand.getSelectionModel().selectLast();
+    }
+
+    public void onTorolClick(ActionEvent actionEvent) {
+        ObservableList<String> listviewLines = list_view_rand.getItems();
+        ObservableList<Integer> selectedindices = list_view_rand.getSelectionModel().getSelectedIndices();
+
+        ObservableList<String> newListviewLines = FXCollections.observableArrayList();
+        for (int i = 0; i < listviewLines.size(); i++) {
+            if (!selectedindices.contains(i)){
+                newListviewLines.add(listviewLines.get(i));
+            }
+        }
+
+        list_view_rand.setItems(newListviewLines);
         list_view_rand.getSelectionModel().selectLast();
     }
 }
