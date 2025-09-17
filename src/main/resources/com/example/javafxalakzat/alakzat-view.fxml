@@ -1,10 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" minHeight="480.0" minWidth="640.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.javafxalakzat.AlakzatController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="640.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxalakzat.AlakzatController">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" maxHeight="250.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" maxHeight="250.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onPirosSelect" text="Piros">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="color_group" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onKekSelect" text="Kék" toggleGroup="$color_group">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin></RadioButton>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onZoldSelect" text="Zöld" toggleGroup="$color_group">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin></RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="Négyzet">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="shape_group" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="Kör" toggleGroup="$shape_group">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin></RadioButton>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="Háromszög" toggleGroup="$shape_group">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin></RadioButton>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Pane id="pane_alakzat" fx:id="pane_alakzat" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView id="imgview_alakzat" fx:id="imgview_alakzat" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="TOP_CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button minWidth="60.0" mnemonicParsing="false" text="Hozzáad">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button minWidth="60.0" mnemonicParsing="false" text="Töröl">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <ListView id="list_view_rand" fx:id="list_view_rand" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </ListView>
+            <Button mnemonicParsing="false" text="Mentés">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children></VBox>
+   </children>
+</HBox>
