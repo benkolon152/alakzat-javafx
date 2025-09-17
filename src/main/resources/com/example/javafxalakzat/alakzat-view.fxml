@@ -13,18 +13,18 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onPirosSelect" text="Piros">
+                        <RadioButton id="red_button" fx:id="red_button" minWidth="100.0" mnemonicParsing="false" onAction="#onPirosSelect" text="Piros">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                            <toggleGroup>
                               <ToggleGroup fx:id="color_group" />
                            </toggleGroup></RadioButton>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onKekSelect" text="Kék" toggleGroup="$color_group">
+                        <RadioButton id="blue_button" fx:id="blue_button" minWidth="100.0" mnemonicParsing="false" onAction="#onKekSelect" text="Kék" toggleGroup="$color_group">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin></RadioButton>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onZoldSelect" text="Zöld" toggleGroup="$color_group">
+                        <RadioButton id="green_button" fx:id="green_button" minWidth="100.0" mnemonicParsing="false" onAction="#onZoldSelect" text="Zöld" toggleGroup="$color_group">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin></RadioButton>
@@ -32,18 +32,18 @@
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onNegyzetSelect" text="Négyzet">
+                        <RadioButton id="square_button" fx:id="square_button" minWidth="100.0" mnemonicParsing="false" onAction="#onNegyzetSelect" text="Négyzet">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                            <toggleGroup>
                               <ToggleGroup fx:id="shape_group" />
                            </toggleGroup></RadioButton>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onKorSelect" text="Kör" toggleGroup="$shape_group">
+                        <RadioButton id="circle_button" fx:id="circle_button" minWidth="100.0" mnemonicParsing="false" onAction="#onKorSelect" text="Kör" toggleGroup="$shape_group">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin></RadioButton>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" onAction="#onHaromSelect" text="Háromszög" toggleGroup="$shape_group">
+                        <RadioButton id="triangle_button" fx:id="triangle_button" minWidth="100.0" mnemonicParsing="false" onAction="#onHaromSelect" text="Háromszög" toggleGroup="$shape_group">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin></RadioButton>
@@ -65,7 +65,7 @@
          <children>
             <HBox alignment="TOP_CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button minWidth="60.0" mnemonicParsing="false" text="Hozzáad">
+                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#onHozaadClick" text="Hozzáad">
                      <HBox.margin>
                         <Insets bottom="10.0" right="10.0" top="10.0" />
                      </HBox.margin>

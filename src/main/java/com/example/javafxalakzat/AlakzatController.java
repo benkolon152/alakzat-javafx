@@ -1,9 +1,11 @@
 package com.example.javafxalakzat;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +24,12 @@ public class AlakzatController {
     public ToggleGroup color_group;
     public ImageView imgview_alakzat;
     public Pane pane_alakzat;
+    public RadioButton red_button;
+    public RadioButton blue_button;
+    public RadioButton green_button;
+    public RadioButton square_button;
+    public RadioButton circle_button;
+    public RadioButton triangle_button;
     @FXML
     private Label welcomeText;
 
@@ -52,5 +60,37 @@ public class AlakzatController {
 
     public void onHaromSelect(ActionEvent actionEvent) {
         imgview_alakzat.setImage(new Image("file:icons/haromszog.png"));
+    }
+
+    public void onHozaadClick(ActionEvent actionEvent) {
+        ObservableList<String> listviewLines = list_view_rand.getItems();
+
+        String newLine = "";
+
+        if (red_button.isSelected()){
+            newLine += "Piros, ";
+        }
+        if (green_button.isSelected()){
+            newLine += "Zöld, ";
+        }
+        if (blue_button.isSelected()){
+            newLine += "Kék, ";
+        }
+
+        if (square_button.isSelected()){
+            newLine += "Négyzet";
+        }
+        if (circle_button.isSelected()){
+            newLine += "Kör";
+        }
+        if (triangle_button.isSelected()){
+            newLine += "Háromszög";
+        }
+
+        if(!newLine.isEmpty()) listviewLines.add(newLine);
+
+        //listviewLines.add("Piros, kör");
+        list_view_rand.setItems(listviewLines);
+        list_view_rand.getSelectionModel().selectLast();
     }
 }
