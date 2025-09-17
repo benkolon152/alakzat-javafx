@@ -5,11 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class AlakzatController {
     @FXML
@@ -36,5 +40,17 @@ public class AlakzatController {
 
     public void onZoldSelect(ActionEvent actionEvent) {
         pane_alakzat.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null)));
+    }
+
+    public void onNegyzetSelect(ActionEvent actionEvent) throws FileNotFoundException {
+        imgview_alakzat.setImage(new Image("file:icons/negyzet.png"));
+    }
+
+    public void onKorSelect(ActionEvent actionEvent) {
+        imgview_alakzat.setImage(new Image("file:icons/kor.png"));
+    }
+
+    public void onHaromSelect(ActionEvent actionEvent) {
+        imgview_alakzat.setImage(new Image("file:icons/haromszog.png"));
     }
 }
